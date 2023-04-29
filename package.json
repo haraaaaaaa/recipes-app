@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "bson": "^5.2.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongodb": "^5.3.0",
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7"
+  },
+  "name": "recipes-app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haraaaaaaa/recipes-app.git"
+  },
+  "keywords": [],
+  "author": "Haraaaaaaaaa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haraaaaaaa/recipes-app/issues"
+  },
+  "homepage": "https://github.com/haraaaaaaa/recipes-app#readme",
+  "description": ""
+}
