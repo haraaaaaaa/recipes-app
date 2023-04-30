@@ -1,0 +1,71 @@
+<%- include("includes/head.ejs") %>
+<link rel="stylesheet" href="/css/form.css">
+<link rel="stylesheet" href="/css/add-recipe.css">
+</head>
+<body>
+    <%- include("includes/navbar.ejs") %>
+
+    <div class="container">
+
+        <form class="form" id="main-form" action="/admin/add-recipe" method="post">
+            <h1 class="form__header">Add New Recipe</h1>
+        
+            <div class="form__control">
+                <label for="title">Title</label>
+                <input type="text" placeholder="Title" name="title">
+            </div>
+            
+            <div class="form__control">
+                <label for="imgUrl">Image Url</label>
+                <input type="text" placeholder="imgUrl" name="imgUrl">
+            </div>
+            
+            <div class="form__control">
+                <label for="instructions">Instructions</label>
+                <textarea name="instructions" id="" cols="40" rows="20"></textarea>
+            </div>
+        
+            <div class="form__control">
+                <select name="category" id="">
+                    <% for(const category of categories){ %>
+                        <option value="<%= category._id %>"><%= category.name %></option>
+                    <% } %>
+                </select>
+            </div>
+        
+            <div class="ingredients">        
+                <h1 class="form__header">Input Needed Ingredients:</h3>
+    
+                <div class="form__control">
+                    <label for="name">Name</label>
+                    <input type="text" class="" placeholder="Name">
+                </div>
+    
+                <div class="form__control">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" placeholder="Quantity">
+                </div>
+    
+                <div class="form__control">
+                    <label for="measure">Measurement</label>
+                    <input type="text" placeholder="Measurement">
+                </div>
+    
+                <div class="form__action" id="add-ing">
+                    <button type="button">+ Add Ingredient</button>
+                </div>
+    
+                <ul class="listBlock"></ul>
+            </div>
+
+        </form>
+
+        <div class="form__action">
+            <button type="submit" form="main-form">+ Add Recipe</button>
+        </div>
+
+    </div>
+
+    <script src="/javascript/ingredients.js"></script>
+</body>
+</html>

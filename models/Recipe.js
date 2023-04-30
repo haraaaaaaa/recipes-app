@@ -1,12 +1,13 @@
 // Requirements
-const { get } = require("../routes/recipe.routes");
 const { getDB } = require("../util/database");
 const { ObjectId } = require("bson");
 
 module.exports = class Recipe {
-  constructor(title, instruction, recipeId, categoryId) {
+  constructor(title, instructions, ingredients, imgUrl, categoryId, recipeId) {
     this.title = title;
-    this.instruction = instruction;
+    this.instructions = instructions;
+    this.ingredients = ingredients;
+    this.imgUrl = imgUrl;
     this.categoryId = new ObjectId(categoryId);
 
     if (recipeId) {

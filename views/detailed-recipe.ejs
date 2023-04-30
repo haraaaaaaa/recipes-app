@@ -1,0 +1,57 @@
+<%- include("includes/head.ejs") %>
+<link rel="stylesheet" href="/css/blog-detail.css">
+<link rel="stylesheet" href="/css/add-comment.css">
+<link rel="stylesheet" href="/css/comments.css">
+</head>
+<body>
+    <%- include("includes/navbar.ejs") %>
+    <div class="recipe">
+        <h1> <%= recipe.title %> </h1>
+        <div>
+                <ul class="list__list">
+                    <% for(const ingredient of ingredients) { %>
+                        <li><%= recipe.ingredients %></li>
+                    <% } %>
+                </ul>
+        </div>
+        <p> <%= blog.content %> </p>
+        <button id="show-btn" class="show-com-btn">Show Comments</button>
+    </div>
+
+    <button id="comm-btn" class="comm-btn">Comment</button>
+
+    <div id="comment-container" class="comment-container">
+        <h1 class="comm-list__header">Comments</h1>
+        <% if (comments.length === 0) { %>
+        <h1 class="comm-list">There are no comments.</h1>
+        <% } else { %>
+        <ul class="comm-list">
+        <% for(const comment of comments) { %>
+            <%- include("includes/comment.ejs", {comment}) %>
+        <% } %>
+        </ul>
+        <% }%>
+    </div>
+
+    <div id="form-container" class="form-container">
+        <form id="form" class="comm" action="/blogs/<%= blog.id %>" method="post">
+            <h1 class="comm__header">Write a Comment...</h1>
+            <div class="comm__control">
+                <label for="username">Your Username</label>
+            <input type="text" placeholder="Username" name="username">
+            </div>
+
+            <div class="comm__control">
+                <label for="content">Write Your Comment Here:</label>
+                <textarea name="content" id="" cols="30" rows="10" placeholder="Comment"></textarea>
+            </div>
+            
+            <div class="comm__action">
+                <button type="submit">Post Your Comment</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/javascript/comment.js"></script>
+</body>
+</html>
