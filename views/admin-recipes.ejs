@@ -4,9 +4,9 @@
 <body>
     <%- include("includes/navbar.ejs") %>
     <div class="list">
-    <h1 class="list__header">List of Recipes</h1>
+    <h1 class="list__header">Recipes Overview</h1>
     <% if (recipes.length === 0) { %>
-     <h1>There Are No Recipes.</h1>
+     <h2 class="list__header">There Are No Added Recipes.</h1>
     <% } else { %>
         <ul class="list__list">
         <% for(const recipe of recipes) { %>

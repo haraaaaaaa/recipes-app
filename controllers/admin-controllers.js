@@ -1,7 +1,6 @@
 // Requirements
 const Recipe = require("../models/Recipe");
 const Category = require("../models/Category");
-const { ingredients } = require("../public/javascript/ingredients");
 
 exports.getAddRecipe = async (request, response) => {
   const categories = await Category.fetchAll();
@@ -15,9 +14,19 @@ exports.getAddRecipe = async (request, response) => {
 
 exports.postAddRecipe = async (request, response) => {
   const { title, imgUrl, instructions, category, ingredients } = request.body;
-  console.log(title, imgUrl, instructions, category, ingredients);
+  console.log(title, imgUrl, instructions, category);
   const recipe = new Recipe(title, instructions, ingredients, imgUrl, category);
   await recipe.save();
 
   response.redirect("/");
+};
+
+exports.getAdminRecipes = async (request, response) => {
+  const recipes = await Recipe.fetchAll();
+
+  response.render("admin-recipes", {
+    pageTitle: "Recipes Overview",
+    path: "/admin/recipes",
+    recipes,
+  });
 };
