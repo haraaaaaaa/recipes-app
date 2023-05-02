@@ -21,6 +21,6 @@ exports.postComment = async (request, response) => {
   } else {
     console.log("test after if");
     await comment.save();
+    return response.redirect("/");
   }
-  response.redirect("/");
 };
