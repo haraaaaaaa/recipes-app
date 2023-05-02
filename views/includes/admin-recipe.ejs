@@ -1,6 +1,7 @@
 <li class="list__list-item">
-    <img src="<%= recipe.imgUrl %>" alt="">
     <h1> <%= recipe.title %> </h1>
+    <img src="<%= recipe.imgUrl %>" alt="">
+    <h3> <%= recipe.ingredients %></h3>
     <a href="/admin/recipes/<%= recipe._id %>/edit">Edit</a>
     <a href="/admin/recipes/<%= recipe._id %>/delete">Delete</a>
 </li>

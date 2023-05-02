@@ -15,7 +15,7 @@ exports.getRecipes = async (request, response) => {
 exports.getRecipe = async (request, response) => {
   const { id } = request.params;
   const recipe = await Recipe.findById(id);
-  const comments = /*await Comment.fetchAll(id)*/ [];
+  const comments = await Comment.fetchAll(id);
 
   if (!recipe) {
     const error = { title: "Error 404", message: "Not Found" };
@@ -24,12 +24,12 @@ exports.getRecipe = async (request, response) => {
       path: "*",
       error,
     });
+  } else {
+    response.render("detailed-recipe", {
+      pageTitle: recipe.title,
+      path: "/recipes/",
+      recipe,
+      comments,
+    });
   }
-
-  response.render("detailed-recipe", {
-    pageTitle: recipe.title,
-    path: "/recipes/",
-    recipe,
-    comments,
-  });
 };

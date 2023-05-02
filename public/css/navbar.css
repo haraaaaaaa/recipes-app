@@ -8,7 +8,6 @@
 .nav__logo span{
     color: rgb(21, 146, 196);
 }
-
 .nav__links{
     display: flex;
     gap: 2rem;

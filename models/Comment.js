@@ -1,12 +1,14 @@
 // Requirements
+const Recipe = require("./Recipe");
 const { getDB } = require("../util/database");
+const { ObjectId } = require("bson");
 
 module.exports = class Comment {
   constructor(username, content, rating, recipeId) {
     this.username = username;
     this.content = content;
     this.rating = rating;
-    this.recipeId = recipeId;
+    this.recipeId = new ObjectId(recipeId);
   }
 
   async save() {
@@ -14,6 +16,9 @@ module.exports = class Comment {
   }
 
   static async fetchAll(id) {
-    return await getDB().collection("comments").find({ id: this.recipeId });
+    return await getDB()
+      .collection("comments")
+      .find({ recipeId: new ObjectId(id) })
+      .toArray();
   }
 };

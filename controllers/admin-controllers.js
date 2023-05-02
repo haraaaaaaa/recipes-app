@@ -14,7 +14,6 @@ exports.getAddRecipe = async (request, response) => {
 
 exports.postAddRecipe = async (request, response) => {
   const { title, imgUrl, instructions, category, ingredients } = request.body;
-  console.log(title, imgUrl, instructions, category);
   const recipe = new Recipe(title, instructions, ingredients, imgUrl, category);
   await recipe.save();
 

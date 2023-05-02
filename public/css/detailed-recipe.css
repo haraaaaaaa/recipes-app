@@ -1,0 +1,16 @@
+.recipe{
+    width: 65%;
+    height: auto;
+    margin: auto;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 3px 3px 9px -6px black;
+}
+
+.recipe h1{
+    font-weight: bolder;
+    margin-bottom: 1rem;
+}

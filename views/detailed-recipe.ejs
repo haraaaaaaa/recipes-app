@@ -1,5 +1,5 @@
 <%- include("includes/head.ejs") %>
-    <link rel="stylesheet" href="/css/blog-detail.css">
+    <link rel="stylesheet" href="/css/detailed-recipe.css">
     <link rel="stylesheet" href="/css/comments.css">
     </head>
 
@@ -16,14 +16,14 @@
                     <%= recipe.instructions %>
                 </p>
                 <button id="show-btn" class="show-com-btn">Show Comments</button>
+                <button id="comm-btn" class="comm-btn">Comment</button>
             </div>
 
-            <button id="comm-btn" class="comm-btn">Comment</button>
 
             <div id="comment-container" class="comment-container">
                 <h1 class="comm-list__header">Comments</h1>
                 <% if (comments.length===0) { %>
-                    <h1 class="comm-list">There are no comments.</h1>
+                    <h1 class="comm-list__header">There are no comments.</h1>
                     <% } else { %>
                         <ul class="comm-list">
                             <% for(const comment of comments) { %>
@@ -34,8 +34,8 @@
             </div>
 
             <div id="form-container" class="form-container">
-                <form id="form" class="comm" action="/recipes/<%= recipe.id %>" method="post">
-                    <h1 class="comm__header">Write a Comment...</h1>
+                <form id="form" class="comm" action="/recipes/<%= recipe._id %>" method="post">
+                    <h1 class="comm-list__header">Write a Comment...</h1>
                     <div class="comm__control">
                         <label for="username">Your Username</label>
                         <input type="text" placeholder="Username" name="username">
