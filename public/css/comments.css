@@ -1,16 +1,16 @@
-.comment-container{
+.comment-container {
     max-width: 1000px;
     margin: auto;
 }
 
-.comm-list__header{
+.comm-list__header {
     margin-top: 1rem;
     text-align: center;
     font-weight: bold;
     font-size: 1.5rem;
 }
 
-.comm-list{
+.comm-list {
     width: 100%;
     text-decoration: none;
     list-style: none;
@@ -20,7 +20,7 @@
     gap: 3rem;
 }
 
-.comm-list__item{
+.comm-list__item {
     width: 100%;
     height: auto;
     padding: 1.5rem;
@@ -28,8 +28,103 @@
     box-shadow: 3px 3px 9px -6px black;
 }
 
-.comm-list__item h1{
+.comm-list__item h1 {
     font-weight: bold;
     margin-bottom: 0.5rem;
     font-size: 1rem;
+}
+
+.comm {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 3px 3px 9px -6px black;
+}
+
+.comm__header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.comm__control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.comm__control label {
+    color: #333;
+    margin-bottom: 0.2rem;
+}
+
+.comm__control input,
+.comm__control textarea {
+    background: transparent;
+    border: 1px solid rgb(21, 146, 196);
+    border-radius: 5px;
+    padding: 0.2rem 0.1rem;
+    resize: none;
+    overflow: auto;
+}
+
+.comm__action button {
+    background-color: rgb(21, 146, 196);
+    color: #eee;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 3px 3px 9px -6px black;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.comm__action button:hover {
+    background-color: #335faf;
+    transition: 0.5s;
+}
+
+.comm-btn {
+    background-color: rgb(21, 146, 196);
+    color: #eee;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 3px 3px 9px -6px black;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    max-width: 300px;
+}
+
+.comm-btn:hover {
+    background-color: #335faf;
+    transition: 0.125s;
+}
+
+.show-com-btn {
+    background-color: rgb(21, 146, 196);
+    color: #eee;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 3px 3px 9px -6px black;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.show-com-btn:hover {
+    background-color: #335faf;
+    transition: 0.225s;
+}
+
+.hidden {
+    display: none;
 }

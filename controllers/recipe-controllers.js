@@ -15,9 +15,10 @@ exports.getRecipes = async (request, response) => {
 exports.getRecipe = async (request, response) => {
   const { id } = request.params;
   const recipe = await Recipe.findById(id);
+  const comments = /*await Comment.fetchAll(id)*/ [];
 
   if (!recipe) {
-    const error = { message: "Not Found" };
+    const error = { title: "Error 404", message: "Not Found" };
     return response.render("error", {
       pageTitle: error.title,
       path: "*",
@@ -29,5 +30,6 @@ exports.getRecipe = async (request, response) => {
     pageTitle: recipe.title,
     path: "/recipes/",
     recipe,
+    comments,
   });
 };

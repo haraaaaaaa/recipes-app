@@ -12,4 +12,8 @@ module.exports = class Comment {
   async save() {
     return await getDB().collection("comments").insertOne(this);
   }
+
+  static async fetchAll(id) {
+    return await getDB().collection("comments").find({ id: this.recipeId });
+  }
 };

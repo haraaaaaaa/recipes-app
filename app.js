@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const adminRoutes = require("./routes/admin.routes");
 const recipeRoutes = require("./routes/recipe.routes");
+const commentRoutes = require("./routes/comment.routes");
 const errorControllers = require("./controllers/error-controllers");
 const { connect } = require("./util/database");
 
@@ -18,6 +19,7 @@ app.use(express.static("public"));
 // Routing
 app.use(adminRoutes);
 app.use(recipeRoutes);
+app.use(commentRoutes);
 
 app.get("*", errorControllers.get404);
 

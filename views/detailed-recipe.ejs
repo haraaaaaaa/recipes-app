@@ -1,15 +1,69 @@
 <%- include("includes/head.ejs") %>
-<link rel="stylesheet" href="/css/blog-detail.css">
-<link rel="stylesheet" href="/css/add-comment.css">
-<link rel="stylesheet" href="/css/comments.css">
-</head>
-<body>
-    <%- include("includes/navbar.ejs") %>
-    <div class="recipe">
-        <h1> <%= recipe.title %> </h1>
-        <p> <%= recipe.ingredients %> </p>
-        <p> <%= recipe.instructions %> </p>
-        <button id="show-btn" class="show-com-btn">Show Comments</button>
-    </div>
-</body>
-</html>
+    <link rel="stylesheet" href="/css/blog-detail.css">
+    <link rel="stylesheet" href="/css/comments.css">
+    </head>
+
+    <body>
+        <%- include("includes/navbar.ejs") %>
+            <div class="recipe">
+                <h1>
+                    <%= recipe.title %>
+                </h1>
+                <p>
+                    <%= recipe.ingredients %>
+                </p>
+                <p>
+                    <%= recipe.instructions %>
+                </p>
+                <button id="show-btn" class="show-com-btn">Show Comments</button>
+            </div>
+
+            <button id="comm-btn" class="comm-btn">Comment</button>
+
+            <div id="comment-container" class="comment-container">
+                <h1 class="comm-list__header">Comments</h1>
+                <% if (comments.length===0) { %>
+                    <h1 class="comm-list">There are no comments.</h1>
+                    <% } else { %>
+                        <ul class="comm-list">
+                            <% for(const comment of comments) { %>
+                                <%- include("includes/comment.ejs", {comment}) %>
+                                    <% } %>
+                        </ul>
+                        <% }%>
+            </div>
+
+            <div id="form-container" class="form-container">
+                <form id="form" class="comm" action="/recipes/<%= recipe.id %>" method="post">
+                    <h1 class="comm__header">Write a Comment...</h1>
+                    <div class="comm__control">
+                        <label for="username">Your Username</label>
+                        <input type="text" placeholder="Username" name="username">
+                    </div>
+
+                    <div class="comm__control">
+                        <label for="content">Write Your Comment Here:</label>
+                        <textarea name="content" id="" cols="30" rows="10" placeholder="Comment"></textarea>
+                    </div>
+
+                    <div class="comm__control">
+                        <label for="rating">Rate this recipe:</label>
+                        <select name="rating" id="">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="comm__action">
+                        <button type="submit">Post Your Comment</button>
+                    </div>
+                </form>
+            </div>
+
+            <script src="/javascript/comment.js"></script>
+    </body>
+
+    </html>
