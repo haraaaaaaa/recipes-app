@@ -11,6 +11,21 @@
 }
 
 .recipe h1{
+    font-size: large;
     font-weight: bolder;
     margin-bottom: 1rem;
+}
+
+.recipe h2{
+    font-weight: bold;
+    font-size: medium;
+    margin-bottom: 0.5rem;
+}
+
+.recipe li{
+    margin-bottom: 2rem;
+}
+
+.recipe img{
+    margin-bottom: 1.5rem;
 }

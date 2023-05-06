@@ -9,14 +9,23 @@
                 <h1>
                     <%= recipe.title %>
                 </h1>
-                <p>
-                    <%= recipe.ingredients %>
-                </p>
-                <p>
-                    <%= recipe.instructions %>
-                </p>
+
+                    <img src="<%= recipe.imgUrl %>" alt="">
+
+                <ul>
+                    <h2>Needed ingredients:</h2>
+                    <li><%= recipe.ingredients %></li>
+                    <h2>Instructions:</h2>
+                    <li><%= recipe.instructions %></li>
+                </ul>
+
                 <button id="show-btn" class="show-com-btn">Show Comments</button>
                 <button id="comm-btn" class="comm-btn">Comment</button>
+                
+                <form action="/recipes/<%= recipe._id %>/like" method="post" class="form-like">
+                    <button class="recipe-like">💙</button>
+                </form>
+
             </div>
 
 

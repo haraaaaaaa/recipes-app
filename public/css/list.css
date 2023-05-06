@@ -32,6 +32,8 @@
 }
 .list__list-item img{
     max-width: 100%;
+    margin-bottom: 1.5rem;
+    box-shadow: 4px 4px 10px -7px rgb(23, 105, 138);
 }
 .list__list-item button, .list__list-item a{
     background-color: rgb(21, 146, 196);

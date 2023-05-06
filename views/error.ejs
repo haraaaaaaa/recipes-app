@@ -1,8 +1,9 @@
 <%- include("includes/head.ejs") %>
+<link rel="stylesheet" href="/css/error-page.css">
 </head>
 <body>
     <%- include("includes/navbar.ejs") %>
-    <div>
+    <div class="error">
     <h1><%= error.message %></h1>
     <a href="/recipes">Go Back To Home Page</a>
     </div>

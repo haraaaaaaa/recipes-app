@@ -33,6 +33,12 @@
     margin-bottom: 0.5rem;
     font-size: 1rem;
 }
+.comm-list__item h2 {
+    color: rgb(21, 146, 196);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
 
 .comm {
     max-width: 1000px;
@@ -123,37 +129,6 @@
 .show-com-btn:hover {
     background-color: #335faf;
     transition: 0.225s;
-}
-
-.rating1{
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: 	#ff4545;
-}
-.rating2{
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: #ffa534;
-}
-.rating3{
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: #ffe234;
-}
-.rating4{
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: 	#b7dd29;
-}
-.rating5{
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: 	#57e32c;
 }
 
 .hidden {
