@@ -4,7 +4,7 @@ const Comment = require("../models/Comment");
 const { getDB } = require("../util/database");
 
 exports.getRecipes = async (request, response) => {
-  const recipes = await Recipe.fetchAll();
+  const recipes = await Recipe.fetchAndSort();
 
   response.render("home", {
     pageTitle: "Fantastic Meals",

@@ -43,8 +43,13 @@ module.exports = class Recipe {
     }
   }
 
-  static async fetchAll() {
-    return await getDB().collection("recipes").find().toArray();
+  // Fetches every recipe and sorts it by likes in descending order
+  static async fetchAndSort() {
+    return await getDB()
+      .collection("recipes")
+      .find({}, { title: 1, _id: 0 })
+      .sort({ likes: -1 })
+      .toArray();
   }
 
   static async findById(id) {
